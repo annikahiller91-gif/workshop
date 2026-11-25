@@ -40,9 +40,20 @@
   .swipe{font-size:14px;color:var(--muted);margin:0 0 22px}
 
   /* Nutzen als 2x2 */
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 28px}
+  .gridtitle{font-family:'Playfair Display',serif;font-size:26px;line-height:1.2;color:var(--dark-red);margin:30px 0 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 28px}
   .grid div{background:var(--creme);border-radius:20px;padding:20px 18px;font-size:16.5px;line-height:1.45}
   .grid b{display:block;font-family:'Playfair Display',serif;font-weight:500;font-size:34px;line-height:1;color:var(--muted);margin-bottom:10px}
+
+
+  /* Handy: erst Text, dann Raster, dann Button */
+  .wish .wrap{display:flex;flex-direction:column}
+  .wish .wrap > div:first-child{display:contents}
+  .wish h2{order:1}
+  .wish .wrap > div:first-child > p:not(.note){order:2}
+  .wish .wrap > div:last-child{order:3}
+  .wish .btn{order:4;margin-top:6px}
+  .wish .note{order:5}
 
   /* Fotos */
   .photo{width:100%;border-radius:18px;display:block;object-fit:cover;object-position:50% 35%}
@@ -85,9 +96,13 @@
     .cards{display:grid;grid-template-columns:1fr 1fr;overflow:visible;margin:0;padding:0}
     .card{flex:none;max-width:none;min-height:130px;font-size:21px}
     .swipe{display:none}
+    .wish .wrap.split{display:grid}
+    .wish .wrap > div:first-child{display:block}
+    .wish .btn{margin-top:0}
     .split.start{align-items:start}
     .split.start > div:last-child{position:sticky;top:40px}
-    .grid{margin:0}
+    .grid{margin:14px 0 0}
+    .gridtitle{margin:0}
     .shots{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;margin:0;padding:0;align-items:start}
     .shots img{max-width:none;width:100%}
     .about .photo{margin-bottom:0;aspect-ratio:4/4.4}
@@ -141,7 +156,7 @@
   </div>
 </section>
 
-<section>
+<section class="wish">
   <div class="wrap split">
     <div>
       <h2>Gewählt werden, ohne darum zu kämpfen.</h2>
@@ -150,11 +165,14 @@
       <a class="btn js-zugang" href="#">Hier Zugangslink anfordern</a>
       <p class="note">Schreib mir einfach „Workshop“ und ich schicke ihn dir sofort.</p>
     </div>
+    <div>
+      <p class="gridtitle">Darum geht es im Workshop:</p>
     <div class="grid">
       <div><b>1</b>Warum du bei Männern landest, die dich nicht wählen</div>
       <div><b>2</b>Warum dir ausgerechnet die Netten langweilig vorkommen</div>
       <div><b>3</b>Was sich ändern muss, damit du nicht mehr kämpfst</div>
       <div><b>4</b>Wie dein Mann sein soll und wie du dich neben ihm fühlst</div>
+    </div>
     </div>
   </div>
 </section>
