@@ -55,6 +55,15 @@
   .wish .btn{order:4;margin-top:6px}
   .wish .note{order:5}
 
+
+  /* Ablauf als nummerierte Zeilen */
+  .steps{list-style:none;margin:0}
+  .steps li{display:grid;grid-template-columns:42px 1fr;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid rgba(91,25,29,.18)}
+  .steps li:last-child{border-bottom:0}
+  .steps li:first-child{padding-top:0}
+  .steps b{width:42px;height:42px;border:1px solid var(--muted);border-radius:50%;display:grid;place-items:center;font-family:'Playfair Display',serif;font-weight:500;color:var(--dark-red);font-size:19px}
+  .steps span{font-size:17.5px;line-height:1.45}
+
   /* Fotos */
   .photo{width:100%;border-radius:18px;display:block;object-fit:cover;object-position:50% 35%}
 
@@ -168,16 +177,33 @@
     <div>
       <p class="gridtitle">Darum geht es im Workshop:</p>
     <div class="grid">
-      <div><b>1</b>Warum du bei Männern landest, die dich nicht wählen</div>
-      <div><b>2</b>Warum dir ausgerechnet die Netten langweilig vorkommen</div>
-      <div><b>3</b>Was sich ändern muss, damit du nicht mehr kämpfst</div>
-      <div><b>4</b>Wie dein Mann sein soll und wie du dich neben ihm fühlst</div>
-    </div>
+        <div><b>1</b>Warum passiert mir das immer wieder?</div>
+        <div><b>2</b>Warum will ich immer die Männer, die mich nicht wollen?</div>
+        <div><b>3</b>Was muss ich bei mir verändern, damit es endlich anders läuft?</div>
+        <div><b>4</b>Wie komme ich endlich zu einer verbindlichen Beziehung?</div>
+      </div>
     </div>
   </div>
 </section>
 
+
 <section class="alt">
+  <div class="wrap split">
+    <div>
+      <h2>Wenn du dich wiedererkannt hast, bist du hier richtig.</h2>
+      <p>An diesem Abend schaust du dir an, was bei dir wirklich dahintersteckt. Du gehst mit einem klaren Bild nach Hause, was du ab morgen anders machen kannst.</p>
+    </div>
+    <ol class="steps">
+      <li><b>1</b><span>Du siehst, was dich das ständige Hoffen und Warten bisher gekostet hat</span></li>
+      <li><b>2</b><span>Du erkennst, was unter der Oberfläche läuft und warum du dich immer wieder gleich verhältst</span></li>
+      <li><b>3</b><span>Du verstehst, warum dich genau diese Männer anziehen und die Netten langweilen</span></li>
+      <li><b>4</b><span>Du erfährst, woran du früh erkennst, ob ein Mann auf Augenhöhe ist und bleibt</span></li>
+      <li><b>5</b><span>Du gehst mit deinem Wunschbild nach Hause</span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <h2>Das haben Teilnehmerinnen geschrieben.</h2>
     <div class="shots">
@@ -192,7 +218,7 @@
   </div>
 </section>
 
-<section class="about">
+<section class="alt about">
   <div class="wrap split">
     <img class="photo" src="bilder/annika-nik-1.jpg" alt="Annika und Nik lachend auf einer Liege">
     <div>
@@ -211,7 +237,7 @@
   </div>
 </section>
 
-<section class="alt final" id="zugang">
+<section class="final" id="zugang">
   <div class="wrap split">
     <img class="photo" src="bilder/annika-nik-2.jpg" alt="Annika und Nik auf dem Sofa">
     <div>
