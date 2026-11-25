@@ -68,7 +68,32 @@
   .sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--offwhite) 70%,rgba(250,246,244,0));transform:translateY(110%);transition:transform .3s;z-index:10}
   .sticky.show{transform:none}
   .sticky .btn{max-width:620px;margin:0 auto;padding:15px 22px;font-size:17px}
-  @media(min-width:760px){ .sticky{display:none} body{font-size:19px} .cards,.shots{flex-wrap:wrap;overflow:visible;margin-left:0;margin-right:0;padding-left:0;padding-right:0} .shots img{flex:0 0 calc(50% - 7px)} .card{flex:0 0 calc(50% - 7px);max-width:none} .swipe{display:none} }
+
+  /* Am Computer und Tablet: Text und Foto nebeneinander */
+  @media(min-width:860px){
+    .sticky{display:none}
+    body{font-size:19px}
+    .wrap{max-width:1080px;padding:0 40px}
+    h1{font-size:56px}
+    h2{font-size:38px}
+    section{padding:88px 0}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .top{padding:48px 0 84px}
+    .top .photo{margin-top:0;aspect-ratio:4/5}
+    .top .btn,.final .btn{max-width:420px}
+    .note{text-align:left}
+    .cards{display:grid;grid-template-columns:1fr 1fr;overflow:visible;margin:0;padding:0}
+    .card{flex:none;max-width:none;min-height:130px;font-size:21px}
+    .swipe{display:none}
+    .rev .split{direction:ltr}
+    .grid{margin:0}
+    .shots{display:grid;grid-template-columns:repeat(3,1fr);overflow:visible;margin:0;padding:0;align-items:start}
+    .shots img{max-width:none;width:100%}
+    .about .photo{margin-bottom:0;aspect-ratio:4/4.4}
+    .final{text-align:left}
+    .final .photo{margin-bottom:0;aspect-ratio:4/3.6}
+    .final .note{text-align:left}
+  }
 </style>
 </head>
 <body>
@@ -79,44 +104,52 @@
 </script>
 
 <header class="top">
-  <div class="wrap">
-    <p class="label" id="termin">Kostenfreier Live-Workshop · So, 29. November · 19 bis 20:30 Uhr</p>
-    <h1>Warum bist du immer nur die Option, nie die Wahl?</h1>
-    <p class="lead">Erfahre, was sich ändern muss, damit du nicht länger um einen Platz in seinem Leben kämpfen musst.</p>
-    <div class="facts"><span>kostenfrei</span><span>live per Zoom</span><span>mit Annika</span></div>
-    <a class="btn js-zugang" href="#">Hier Zugangslink anfordern</a>
-    <p class="note">Schreib mir einfach „Workshop“ und ich schicke ihn dir sofort.</p>
+  <div class="wrap split">
+    <div>
+      <p class="label" id="termin">Kostenfreier Live-Workshop · So, 29. November · 19 bis 20:30 Uhr</p>
+      <h1>Warum bist du immer nur die Option, nie die Wahl?</h1>
+      <p class="lead">Erfahre, was sich ändern muss, damit du nicht länger um einen Platz in seinem Leben kämpfen musst.</p>
+      <div class="facts"><span>kostenfrei</span><span>live per Zoom</span><span>mit Annika</span></div>
+      <a class="btn js-zugang" href="#">Hier Zugangslink anfordern</a>
+      <p class="note">Schreib mir einfach „Workshop“ und ich schicke ihn dir sofort.</p>
+    </div>
     <img class="photo" src="bilder/annika.jpg" alt="Annika, lachend am Strand im Abendlicht">
   </div>
 </header>
 
 <section class="alt">
-  <div class="wrap">
-    <h2>Kommt dir das bekannt vor?</h2>
-    <div class="cards">
-      <div class="card">„Hab ich was falsch gemacht?“</div>
-      <div class="card">„Woran bin ich?“</div>
-      <div class="card">„Ich will ihn nicht verlieren.“</div>
-      <div class="card">„Diese Ungewissheit ist schlimmer als jede Abfuhr.“</div>
-      <div class="card">„Du bist eine tolle Frau, aber…“</div>
+  <div class="wrap split">
+    <div>
+      <h2>Kommt dir das bekannt vor?</h2>
+      <p style="margin-bottom:0"><b>Du bist nicht der Fehler im System.</b> Es gibt einen Grund, warum du immer wieder bei Männern landest, die dich nicht wählen.</p>
     </div>
-    <p class="swipe">Wische zur Seite.</p>
-    <p style="margin-bottom:0"><b>Du bist nicht der Fehler im System.</b> Es gibt einen Grund, warum du immer wieder bei Männern landest, die dich nicht wählen.</p>
+    <div>
+      <div class="cards">
+        <div class="card">„Hab ich was falsch gemacht?“</div>
+        <div class="card">„Woran bin ich?“</div>
+        <div class="card">„Ich will ihn nicht verlieren.“</div>
+        <div class="card">„Diese Ungewissheit ist schlimmer als jede Abfuhr.“</div>
+        <div class="card">„Du bist eine tolle Frau, aber…“</div>
+      </div>
+      <p class="swipe" style="margin-bottom:0">Wische zur Seite.</p>
+    </div>
   </div>
 </section>
 
 <section>
-  <div class="wrap">
-    <h2>Gewählt werden, ohne darum zu kämpfen.</h2>
-    <p>Ein Mann, der sich entscheidet. Klar. Für dich. Ohne dass du ihn erst überzeugen musst.</p>
+  <div class="wrap split">
+    <div>
+      <h2>Gewählt werden, ohne darum zu kämpfen.</h2>
+      <p>Ein Mann, der sich entscheidet. Klar. Für dich. Ohne dass du ihn erst überzeugen musst.</p>
+      <a class="btn js-zugang" href="#">Hier Zugangslink anfordern</a>
+      <p class="note">Schreib mir einfach „Workshop“ und ich schicke ihn dir sofort.</p>
+    </div>
     <div class="grid">
       <div><b>1</b>Warum du bei Männern landest, die dich nicht wählen</div>
       <div><b>2</b>Warum dir ausgerechnet die Netten langweilig vorkommen</div>
       <div><b>3</b>Was sich ändern muss, damit du nicht mehr kämpfst</div>
       <div><b>4</b>Wie dein Mann sein soll und wie du dich neben ihm fühlst</div>
     </div>
-    <a class="btn js-zugang" href="#">Hier Zugangslink anfordern</a>
-    <p class="note">Schreib mir einfach „Workshop“ und ich schicke ihn dir sofort.</p>
   </div>
 </section>
 
@@ -136,29 +169,33 @@
 </section>
 
 <section class="about">
-  <div class="wrap">
+  <div class="wrap split">
     <img class="photo" src="bilder/annika-nik-1.jpg" alt="Annika und Nik lachend auf einer Liege">
-    <h2>Ich weiß, wie sich das anfühlt.</h2>
-    <p>Fast 10 Jahre war ich Single. Ich machte Karriere, verdiente gutes Geld, bereiste Kuba, Südafrika und Marokko und liebte Brunch-Dates mit meinen Mädls. Aber sobald ich einen Mann toll fand, war von der selbstbewussten Annika plötzlich nicht mehr viel übrig.</p>
-    <details>
-      <summary>Meine ganze Geschichte lesen</summary>
-      <p>Ich wartete auf Nachrichten, analysierte Antworten und sagte sogar mein heiliges Tanztraining ab, wenn er spontan Zeit hatte. Zog er sich zurück, brach für mich eine Welt zusammen. Tagelang fragte ich mich, was mit mir nicht stimmt. Fürs Bett war ich wohl gut genug, aber für mehr reichte es nie.</p>
-      <p>Dabei hatte ich unzählige Bücher über Datingpsychologie gelesen, Podcasts gehört und war sogar in Therapie. Warum bekam ich ausgerechnet das nicht hin?</p>
-      <p>Irgendwann hörte ich auf, ständig zu überlegen, wie ich einen Mann von mir überzeugen kann, und fing an, mich mit mir selbst auseinanderzusetzen. Plötzlich interessierten sich Männer für mich, die ich früher vermutlich aussortiert hätte.</p>
-      <p>Heute bin ich mit Nik verlobt. Er bemüht sich bis heute um Dates, ich weiß immer, woran ich bin und kann einfach ich selbst sein. Selbst als ich beim dritten oder vierten Date plötzlich weinen musste, nahm er mich ganz selbstverständlich in den Arm. Ich bin nie zu viel oder zu wenig, sondern für ihn perfekt.</p>
-      <p>Und weißt du was? Ohne meine Veränderung hätte ich Nik wahrscheinlich wegen des „fehlenden Funkens“ aussortiert.</p>
-      <p>Heute helfe ich Frauen, die beim Dating genau dort feststecken, wo ich jahrelang war. Und darum geht es in diesem Workshop.</p>
-    </details>
+    <div>
+      <h2>Ich weiß, wie sich das anfühlt.</h2>
+      <p>Fast 10 Jahre war ich Single. Ich machte Karriere, verdiente gutes Geld, bereiste Kuba, Südafrika und Marokko und liebte Brunch-Dates mit meinen Mädls. Aber sobald ich einen Mann toll fand, war von der selbstbewussten Annika plötzlich nicht mehr viel übrig.</p>
+      <details>
+        <summary>Meine ganze Geschichte lesen</summary>
+        <p>Ich wartete auf Nachrichten, analysierte Antworten und sagte sogar mein heiliges Tanztraining ab, wenn er spontan Zeit hatte. Zog er sich zurück, brach für mich eine Welt zusammen. Tagelang fragte ich mich, was mit mir nicht stimmt. Fürs Bett war ich wohl gut genug, aber für mehr reichte es nie.</p>
+        <p>Dabei hatte ich unzählige Bücher über Datingpsychologie gelesen, Podcasts gehört und war sogar in Therapie. Warum bekam ich ausgerechnet das nicht hin?</p>
+        <p>Irgendwann hörte ich auf, ständig zu überlegen, wie ich einen Mann von mir überzeugen kann, und fing an, mich mit mir selbst auseinanderzusetzen. Plötzlich interessierten sich Männer für mich, die ich früher vermutlich aussortiert hätte.</p>
+        <p>Heute bin ich mit Nik verlobt. Er bemüht sich bis heute um Dates, ich weiß immer, woran ich bin und kann einfach ich selbst sein. Selbst als ich beim dritten oder vierten Date plötzlich weinen musste, nahm er mich ganz selbstverständlich in den Arm. Ich bin nie zu viel oder zu wenig, sondern für ihn perfekt.</p>
+        <p>Und weißt du was? Ohne meine Veränderung hätte ich Nik wahrscheinlich wegen des „fehlenden Funkens“ aussortiert.</p>
+        <p>Heute helfe ich Frauen, die beim Dating genau dort feststecken, wo ich jahrelang war. Und darum geht es in diesem Workshop.</p>
+      </details>
+    </div>
   </div>
 </section>
 
 <section class="alt final" id="zugang">
-  <div class="wrap">
+  <div class="wrap split">
     <img class="photo" src="bilder/annika-nik-2.jpg" alt="Annika und Nik auf dem Sofa">
-    <h2>Sei am 29. November dabei.</h2>
-    <p>Kostenfrei, live per Zoom, am Sonntag von 19 bis 20:30 Uhr.</p>
-    <a class="btn js-zugang" href="#">Hier Zugangslink anfordern</a>
-    <p class="note">Schreib mir einfach „Workshop“ und ich schicke ihn dir sofort.</p>
+    <div>
+      <h2>Sei am 29. November dabei.</h2>
+      <p>Kostenfrei, live per Zoom, am Sonntag von 19 bis 20:30 Uhr.</p>
+      <a class="btn js-zugang" href="#">Hier Zugangslink anfordern</a>
+      <p class="note">Schreib mir einfach „Workshop“ und ich schicke ihn dir sofort.</p>
+    </div>
   </div>
 </section>
 
@@ -187,7 +224,7 @@
 
   /* Klebe-Button: nur zeigen, wenn kein anderer Button sichtbar ist */
   var st = document.getElementById('sticky');
-  var festeButtons = document.querySelectorAll('.top .btn, .grid ~ .btn, .final .btn');
+  var festeButtons = document.querySelectorAll('.top .btn, section .btn, .final .btn');
   function upd(){
     var sichtbar = false;
     festeButtons.forEach(function(b){
