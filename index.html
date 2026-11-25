@@ -12,43 +12,37 @@
   :root{ --offwhite:#FAF6F4; --creme:#ECDECC; --muted:#AD746D; --dark-red:#5B191D; --choc:#321B14; }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--offwhite);color:var(--choc);font-family:'Lato',sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  body{background:var(--offwhite);color:var(--choc);font-family:'Lato',sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
   .wrap{max-width:620px;margin:0 auto;padding:0 22px}
-  h1,h2{font-family:'Playfair Display',serif;font-weight:500;line-height:1.18}
-  h1{font-size:clamp(34px,9.6vw,48px);color:var(--offwhite);margin-bottom:16px}
-  h2{font-size:28px;color:var(--dark-red);margin-bottom:12px}
-  p{margin-bottom:14px}
-  section{padding:48px 0}
+  h1,h2{font-family:'Playfair Display',serif;font-weight:500;line-height:1.18;color:var(--dark-red)}
+  h1{font-size:clamp(34px,9.6vw,48px);margin-bottom:18px}
+  h2{font-size:28px;margin-bottom:14px}
+  p{margin-bottom:16px}
+  section{padding:64px 0}
   .alt{background:var(--creme)}
-  .sub{margin-bottom:24px}
 
-  /* Kopf: dunkelrot */
-  .top{background:var(--dark-red);color:var(--offwhite);padding:0 0 40px}
-  .bar{background:var(--choc);color:var(--creme);text-align:center;font-size:13px;letter-spacing:.06em;padding:9px 12px}
-  .top .wrap{padding-top:30px}
-  .top p.lead{font-size:19px;color:var(--creme);margin-bottom:24px}
-  .facts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
-  .facts span{border:1px solid rgba(236,222,204,.45);color:var(--creme);border-radius:999px;font-size:14px;padding:5px 13px}
-  .top .photo{margin:34px 0 0;aspect-ratio:4/3.6}
+  /* Kopf: hell */
+  .top{padding:26px 0 56px}
+  .label{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:22px}
+  .top p.lead{font-size:19.5px;margin-bottom:22px}
+  .facts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+  .facts span{border:1px solid var(--muted);color:var(--dark-red);border-radius:999px;font-size:14px;padding:5px 14px}
+  .top .photo{margin-top:40px;aspect-ratio:4/3.8;border-radius:200px 200px 18px 18px}
 
   /* Button */
   .btn{display:block;text-align:center;background:var(--dark-red);color:var(--offwhite);text-decoration:none;font-weight:700;font-size:18px;padding:18px 26px;border-radius:999px;transition:background .2s;width:100%}
   .btn:hover{background:var(--choc)}
-  .note{font-size:14px;color:var(--muted);text-align:center;margin:10px 0 0}
-  .top .btn,.final .btn{background:var(--offwhite);color:var(--dark-red)}
-  .top .btn:hover,.final .btn:hover{background:var(--creme)}
-  .top .note,.final .note{color:var(--creme)}
+  .note{font-size:14px;color:var(--muted);text-align:center;margin:12px 0 0}
 
-  /* Sätze der Frauen als Karten */
-  .chips{display:grid;gap:10px;margin:18px 0 22px}
-  .chip{background:var(--offwhite);border-radius:16px;padding:15px 18px;font-family:'Playfair Display',serif;font-size:20px;line-height:1.3;color:var(--dark-red)}
+  /* Sätze der Frauen: zum Wischen */
+  .cards{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:22px;padding:6px 22px 18px;margin:20px -22px 8px;-webkit-overflow-scrolling:touch}
+  .card{flex:0 0 74%;max-width:300px;min-height:150px;scroll-snap-align:start;background:var(--offwhite);border-radius:20px;padding:24px 22px;display:flex;align-items:center;font-family:'Playfair Display',serif;font-size:22px;line-height:1.3;color:var(--dark-red)}
+  .swipe{font-size:14px;color:var(--muted);margin:0 0 22px}
 
-  /* Nutzen als Zeilen */
-  .rows{list-style:none;margin:20px 0 0}
-  .rows li{display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(91,25,29,.15)}
-  .rows li:last-child{border-bottom:0}
-  .rows b{width:38px;height:38px;border:1px solid var(--muted);border-radius:50%;display:grid;place-items:center;font-family:'Playfair Display',serif;font-weight:500;color:var(--dark-red);font-size:18px}
-  .mid{margin-top:22px}
+  /* Nutzen als 2x2 */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 28px}
+  .grid div{background:var(--creme);border-radius:20px;padding:20px 18px;font-size:16.5px;line-height:1.45}
+  .grid b{display:block;font-family:'Playfair Display',serif;font-weight:500;font-size:34px;line-height:1;color:var(--muted);margin-bottom:10px}
 
   /* Fotos */
   .photo{width:100%;border-radius:18px;display:block;object-fit:cover;object-position:50% 35%}
@@ -56,27 +50,25 @@
   /* Stimmen: wischen */
   .shots{display:flex;align-items:center;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:22px;padding:4px 22px 18px;margin:0 -22px;-webkit-overflow-scrolling:touch}
   .shots img{flex:0 0 82%;max-width:360px;height:auto;scroll-snap-align:start;border-radius:22px;box-shadow:0 6px 20px rgba(50,27,20,.12)}
-  .swipe{font-size:14px;color:var(--muted);margin:0}
 
   /* Über mich */
-  .about .photo{aspect-ratio:4/3.4;margin-bottom:22px}
+  .about .photo{aspect-ratio:4/3.4;margin-bottom:26px}
   details{margin-top:4px}
   summary{cursor:pointer;color:var(--dark-red);font-weight:700;padding:6px 0;list-style:none}
   summary::-webkit-details-marker{display:none}
   summary:after{content:" +"}
   details[open] summary:after{content:" –"}
-  details p:first-of-type{margin-top:12px}
+  details p:first-of-type{margin-top:14px}
 
   /* Abschluss */
-  .final{background:var(--dark-red);color:var(--offwhite);text-align:center}
-  .final h2{color:var(--offwhite)}
-  .final .photo{aspect-ratio:4/3;margin-bottom:26px}
+  .final{text-align:center}
+  .final .photo{aspect-ratio:4/3;margin-bottom:28px}
 
   /* Klebe-Button am Handy */
   .sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--offwhite) 70%,rgba(250,246,244,0));transform:translateY(110%);transition:transform .3s;z-index:10}
   .sticky.show{transform:none}
   .sticky .btn{max-width:620px;margin:0 auto;padding:15px 22px;font-size:17px}
-  @media(min-width:760px){ .sticky{display:none} body{font-size:19px} .shots{flex-wrap:wrap;overflow:visible;margin:0;padding:0} .shots img{flex:0 0 calc(50% - 7px)} .swipe{display:none} }
+  @media(min-width:760px){ .sticky{display:none} body{font-size:19px} .cards,.shots{flex-wrap:wrap;overflow:visible;margin-left:0;margin-right:0;padding-left:0;padding-right:0} .shots img{flex:0 0 calc(50% - 7px)} .card{flex:0 0 calc(50% - 7px);max-width:none} .swipe{display:none} }
 </style>
 </head>
 <body>
@@ -87,8 +79,8 @@
 </script>
 
 <header class="top">
-  <div class="bar" id="termin">Kostenfreier Live-Workshop · So, 29. November · 19 bis 20:30 Uhr</div>
   <div class="wrap">
+    <p class="label" id="termin">Kostenfreier Live-Workshop · So, 29. November · 19 bis 20:30 Uhr</p>
     <h1>Warum bist du immer nur die Option, nie die Wahl?</h1>
     <p class="lead">Erfahre, was sich ändern muss, damit du nicht länger um einen Platz in seinem Leben kämpfen musst.</p>
     <div class="facts"><span>kostenfrei</span><span>live per Zoom</span><span>mit Annika</span></div>
@@ -101,13 +93,14 @@
 <section class="alt">
   <div class="wrap">
     <h2>Kommt dir das bekannt vor?</h2>
-    <div class="chips">
-      <div class="chip">„Hab ich was falsch gemacht?“</div>
-      <div class="chip">„Woran bin ich?“</div>
-      <div class="chip">„Ich will ihn nicht verlieren.“</div>
-      <div class="chip">„Diese Ungewissheit ist schlimmer als jede Abfuhr.“</div>
-      <div class="chip">„Du bist eine tolle Frau, aber…“</div>
+    <div class="cards">
+      <div class="card">„Hab ich was falsch gemacht?“</div>
+      <div class="card">„Woran bin ich?“</div>
+      <div class="card">„Ich will ihn nicht verlieren.“</div>
+      <div class="card">„Diese Ungewissheit ist schlimmer als jede Abfuhr.“</div>
+      <div class="card">„Du bist eine tolle Frau, aber…“</div>
     </div>
+    <p class="swipe">Wische zur Seite.</p>
     <p style="margin-bottom:0"><b>Du bist nicht der Fehler im System.</b> Es gibt einen Grund, warum du immer wieder bei Männern landest, die dich nicht wählen.</p>
   </div>
 </section>
@@ -115,18 +108,15 @@
 <section>
   <div class="wrap">
     <h2>Gewählt werden, ohne darum zu kämpfen.</h2>
-    <p class="sub">Ein Mann, der sich entscheidet. Klar. Für dich. Ohne dass du ihn erst überzeugen musst.</p>
-    <p style="margin-bottom:0"><b>Das nimmst du aus dem Workshop mit:</b></p>
-    <ul class="rows">
-      <li><b>1</b><span>Warum du immer wieder bei Männern landest, die dich nicht wählen</span></li>
-      <li><b>2</b><span>Warum dir ausgerechnet die Netten langweilig vorkommen</span></li>
-      <li><b>3</b><span>Was sich ändern muss, damit du nicht mehr kämpfen musst</span></li>
-      <li><b>4</b><span>Ein klares Bild, wie dein Mann sein soll und wie du dich neben ihm fühlen willst</span></li>
-    </ul>
-    <div class="mid">
-      <a class="btn js-zugang" href="#">Hier Zugangslink anfordern</a>
-      <p class="note">Schreib mir einfach „Workshop“ und ich schicke ihn dir sofort.</p>
+    <p>Ein Mann, der sich entscheidet. Klar. Für dich. Ohne dass du ihn erst überzeugen musst.</p>
+    <div class="grid">
+      <div><b>1</b>Warum du bei Männern landest, die dich nicht wählen</div>
+      <div><b>2</b>Warum dir ausgerechnet die Netten langweilig vorkommen</div>
+      <div><b>3</b>Was sich ändern muss, damit du nicht mehr kämpfst</div>
+      <div><b>4</b>Wie dein Mann sein soll und wie du dich neben ihm fühlst</div>
     </div>
+    <a class="btn js-zugang" href="#">Hier Zugangslink anfordern</a>
+    <p class="note">Schreib mir einfach „Workshop“ und ich schicke ihn dir sofort.</p>
   </div>
 </section>
 
@@ -141,7 +131,7 @@
       <img src="bilder/stimme-5.jpg" alt="Nachricht einer Teilnehmerin: Das war wirklich richtig gut!" loading="lazy">
       <img src="bilder/stimme-6.jpg" alt="Nachricht einer Teilnehmerin: Ich hab mich SO oft wiedererkannt." loading="lazy">
     </div>
-    <p class="swipe">Wische zur Seite für mehr.</p>
+    <p class="swipe" style="margin-bottom:0">Wische zur Seite.</p>
   </div>
 </section>
 
@@ -162,7 +152,7 @@
   </div>
 </section>
 
-<section class="final" id="zugang">
+<section class="alt final" id="zugang">
   <div class="wrap">
     <img class="photo" src="bilder/annika-nik-2.jpg" alt="Annika und Nik auf dem Sofa">
     <h2>Sei am 29. November dabei.</h2>
@@ -197,7 +187,7 @@
 
   /* Klebe-Button: nur zeigen, wenn kein anderer Button sichtbar ist */
   var st = document.getElementById('sticky');
-  var festeButtons = document.querySelectorAll('.top .btn, .mid .btn, .final .btn');
+  var festeButtons = document.querySelectorAll('.top .btn, .grid ~ .btn, .final .btn');
   function upd(){
     var sichtbar = false;
     festeButtons.forEach(function(b){
